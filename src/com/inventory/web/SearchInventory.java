@@ -23,14 +23,8 @@ public class SearchInventory extends HttpServlet {
 		ProductAdvisor prodAdvisor = new ProductAdvisor();
 		List<String> products = prodAdvisor.getProducts(productCategory);
 		
-		PrintWriter printWriter = response.getWriter();
-		printWriter.println("<h1>Product Selection Advice</h1>");  
-		printWriter.println("<h3>Recomended Products:</h3>");
-		
-		printWriter.println("<ul>");
-		for (String product : products) {
-			printWriter.println("<li>" + product + "</li>");
-		}
-		printWriter.println("</ul>");
+		request.setAttribute("recommendedProducts", products);
+		RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+		view.forward(request, response);
 	}
 }
