@@ -1,0 +1,36 @@
+package com.inventory.web;
+
+import com.inventory.model.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+ 
+import java.io.*;
+import java.util.List;
+
+public class SearchInventory extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException { 
+		response.setContentType("text/html");
+		
+		String productCategory = request.getParameter("productCategory");
+		ProductAdvisor prodAdvisor = new ProductAdvisor();
+		List<String> products = prodAdvisor.getProducts(productCategory);
+		
+		PrintWriter printWriter = response.getWriter();
+		printWriter.println("<h1>Product Selection Advice</h1>");  
+		printWriter.println("<h3>Recomended Products:</h3>");
+		
+		printWriter.println("<ul>");
+		for (String product : products) {
+			printWriter.println("<li>" + product + "</li>");
+		}
+		printWriter.println("</ul>");
+	}
+}
