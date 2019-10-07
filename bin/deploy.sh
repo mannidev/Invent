@@ -32,6 +32,7 @@ mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com"
 mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory"
 mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/model"
 mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/web"
+mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/util"
 
 ##copy class files
 echo "copying class files"

@@ -20,7 +20,13 @@ public class SearchInventory extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String productCategory = request.getParameter("productCategory");
-		ProductAdvisor prodAdvisor = new ProductAdvisor();
+		
+		if (productCategory == null) {
+			productCategory = getServletConfig().getInitParameter("defaultSearchParam");
+		}
+		
+		ServletContext context = getServletContext();
+		ProductAdvisor prodAdvisor = new ProductAdvisor(context);
 		List<String> products = prodAdvisor.getProducts(productCategory);
 		
 		request.setAttribute("recommendedProducts", products);

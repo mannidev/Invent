@@ -7,11 +7,35 @@
 	<servlet>
 		<servlet-name>Search Inventory</servlet-name>
 		<servlet-class>com.inventory.web.SearchInventory</servlet-class>
+		
+		<init-param>
+			<param-name>defaultSearchParam</param-name>
+			<param-value>fruits</param-value>
+		</init-param>
 	</servlet>         
 	
 	<servlet-mapping>
 		<servlet-name>Search Inventory</servlet-name>
 		<url-pattern>/SearchInventtory.do</url-pattern>
 	</servlet-mapping>
-
+	
+	<context-param>
+		<param-name>dbUrl</param-name>
+		<param-value>jdbc:postgresql://127.0.0.1:5432/inventory</param-value> 
+	</context-param>
+	
+	<context-param>
+		<param-name>dbUser</param-name>
+		<param-value>postgres</param-value> 
+	</context-param>
+	
+	<context-param>
+		<param-name>dbPassword</param-name>
+		<param-value>p4ssw0rd</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>com.inventory.util/InventoryServletContextListener</listener-class>
+	</listener>
+	  
 </web-app>
