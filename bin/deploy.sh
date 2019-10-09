@@ -38,6 +38,11 @@ mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/util"
 echo "copying class files"
 cp $PROJECT_PATH/classes/com/inventory/web/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/web/"
 cp $PROJECT_PATH/classes/com/inventory/model/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/model/"
+cp $PROJECT_PATH/classes/com/inventory/util/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/util/"
+
+##copy external lib files 
+echo "copying external libs"
+cp $PROJECT_PATH/lib/*.jar "$SERVER_PATH/lib/"
 
 ##stop and start tomcat service
 net stop Tomcat9

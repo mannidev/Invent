@@ -3,6 +3,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+         
+   <listener>
+		<listener-class>
+			com.inventory.util.InventoryServletContextListener
+		</listener-class>
+	</listener>
 
 	<servlet>
 		<servlet-name>Search Inventory</servlet-name>
@@ -32,10 +38,5 @@
 	<context-param>
 		<param-name>dbPassword</param-name>
 		<param-value>p4ssw0rd</param-value>
-	</context-param>
-	
-	<listener>
-		<listener-class>com.inventory.util/InventoryServletContextListener</listener-class>
-	</listener>
-	  
+	</context-param> 
 </web-app>

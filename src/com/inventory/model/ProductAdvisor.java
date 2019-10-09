@@ -18,10 +18,6 @@ public class ProductAdvisor {
 	public List<String> getProducts(String productCategory) {
 		List<String> products = new ArrayList<String>();
 		try {
-			Connection connection = (Connection) this.context.getAttribute("dbConnection");
-			PreparedStatement sqlStatement = connection.prepareStatement("Select * from inv_products");
-			ResultSet resultSet = sqlStatement.executeQuery();
-			 
 			if (productCategory != null) {
 				switch (productCategory.strip().toLowerCase()) {
 				case "fruit":
@@ -36,10 +32,20 @@ public class ProductAdvisor {
 					products.add("Fitness Tracker");
 					products.add("Basketball");
 					break;
-				case "diy":
-					while(resultSet.next()) {
-						products.add(resultSet.getString("name"));
+				case "diys":
+					Connection connection = (Connection) this.context.getAttribute("dbConnection");
+					if (connection != null) {
+						PreparedStatement sqlStatement = connection.prepareStatement("select * from inv_products");
+						ResultSet resultSet = sqlStatement.executeQuery();
+						while(resultSet.next()) {
+							products.add(resultSet.getString("name"));
+						}
+					}else {
+						products.add(this.context.getInitParameter("dbUrl"));
+						products.add(this.context.getInitParameter("dbUser"));
+						products.add(this.context.getInitParameter("dbPassword"));
 					}
+					
 					break;
 				default:
 					products.add("No products with category " + productCategory);
