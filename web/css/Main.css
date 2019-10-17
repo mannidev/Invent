@@ -1,0 +1,133 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Cerebri Sans, sans-serif;
+	font-weight: 400;
+	font-size: .9375rem; 
+    line-height: 1.5;
+	color: #6e84a3;
+}
+
+/* header */
+.header {
+	display: flex;
+	width: 100%;
+	height: 50px;
+	background-color: #000000;
+	border: none;
+}
+
+.header .header-logo {
+	padding: 10px;
+	flex: 0 0 200px;
+	color: white;
+	text-align: center;
+}
+
+.header .header-content {
+	flex: 1;
+}
+
+.header .header-content .header-search-bar {
+	background-color: white;
+	display: flex;
+	height: 100%;
+	border: none;
+	width: 70%; 
+}
+  
+.header .header-content .header-search-bar input {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding: 10px; 
+	color: #6e84a3;
+	background-color: rgba(0, 0, 0, 0.575);
+}
+
+.header .header-content .header-search-bar input::placeholder {
+	color: rgba(252, 252, 252, 0.678);  
+	font-size: 1rem;
+	text-align: center;
+	font-style: italic
+}
+
+.header .header-content .header-search-bar input:focus {
+	background-color: white;
+	color: #6e84a3;
+	outline: none;
+	border-bottom: 1px solid #6e84a3;
+	text-align: center;
+	font-size: 1rem;
+}
+
+/* main body */
+.main-body {
+	display: flex;
+	width: 100%;
+	height: 90vh;
+	border: none; 
+}
+
+/* side nav */
+.main-body nav {
+	flex: 0 0 200px;
+	height: 100%;
+	padding: 2rem;
+	background-color: white;
+	border-right: 1px solid #e3ebf6;
+}
+
+.main-body nav .sidenav ul{
+	list-style: none;
+	margin-top: 70px; 
+}
+
+.main-body nav .sidenav ul li {
+	padding: .5rem 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.main-body nav .sidenav ul li a {
+	color: #6e84a3; 
+}
+
+.main-body nav .sidenav ul li a:hover{
+	color: #42546d; 
+	font-weight: bolder;
+}
+
+/* main content */
+.main-body .main-content {
+	background-color: #f9fbfd;
+	padding: 1rem 2rem;
+	flex: 1;
+}
+
+.main-body .main-content-header {
+	padding: 1rem 0;
+	border-bottom: 1px solid #e3ebf6;
+}
+
+.main-body .main-content-header h1 {
+	letter-spacing: -.02em;
+	font-size: 1.625rem;
+	font-weight: 500;
+	line-height: 1.1;
+	color: #12263f;
+}
+
+/* footer */
+.footer {
+	background-color: black;
+	text-align: center;
+	padding: 10px;
+}

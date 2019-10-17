@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Add Inventory</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./css/Main.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="header-content">
+			<div class="header-logo">
+				<h1>Shopify </h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="side-nav">
+		<ul>
+			<li><a href="./AddInventory.html">New Inventory</a></li>
+			<li><a href="./SearchInventory.html">View Inventory</a></li>
+		</ul>
+	</div>
+
+	<div class="main-content">
+		<div class="product-form">
+			<h1>New Product</h1>
+			<hr />
+			<form action="./Product.html">
+				<label for="product_name">Name</label>
+				<input type="text" id="product_name" name="product_name" placeholder="Product Name...">
+
+				<label for="product_qty">Quantity</label>
+				<input type="text" id="product_qty" name="product_qty" placeholder="Product Quantity...">
+
+				<label for="product_category">Category</label>
+				<select id="product_category" name="product_category">
+					<option value="">select a category</option>
+				</select>
+
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>All rights reserved &copy;2019</p>
+	</div>
+</body>
+
+</html>
