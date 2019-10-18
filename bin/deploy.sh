@@ -60,12 +60,16 @@ mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory"
 mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/model"
 mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/web"
 mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/util"
+mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/data"
+mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/service"
 
 ##copy class files
 echo "copying class files"
 cp $PROJECT_PATH/classes/com/inventory/web/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/web/"
 cp $PROJECT_PATH/classes/com/inventory/model/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/model/"
 cp $PROJECT_PATH/classes/com/inventory/util/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/util/"
+cp $PROJECT_PATH/classes/com/inventory/data/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/data/"
+cp $PROJECT_PATH/classes/com/inventory/service/*.class "$SERVER_PATH/webapps/$PROJECT_NAME/WEB-INF/classes/com/inventory/service/"
 
 ##copy external lib files 
 echo "copying external libs"
