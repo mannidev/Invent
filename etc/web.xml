@@ -11,8 +11,8 @@
 	</listener>
 
 	<servlet>
-		<servlet-name>Search Inventory</servlet-name>
-		<servlet-class>com.inventory.web.SearchInventory</servlet-class>
+		<servlet-name>New Inventory</servlet-name>
+		<servlet-class>com.inventory.web.NewInventory</servlet-class>
 		
 		<init-param>
 			<param-name>defaultSearchParam</param-name>
@@ -21,8 +21,8 @@
 	</servlet>         
 	
 	<servlet-mapping>
-		<servlet-name>Search Inventory</servlet-name>
-		<url-pattern>/SearchInventtory.do</url-pattern>
+		<servlet-name>New Inventory</servlet-name>
+		<url-pattern>/newInventory.sh</url-pattern>
 	</servlet-mapping>
 	
 	<context-param>

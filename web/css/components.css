@@ -1,0 +1,40 @@
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+
+.card-md {
+	width: 70%;
+}
+
+.card-sm {
+	width: 20%;
+}
+
+.card-wrapper {
+	padding: 1.5rem 2rem; 
+	display: inline-block; 
+	background-color: white;
+	background-clip: border-box;
+	border: 1px solid #edf2f9;
+	border-radius: 4px;
+}
+
+.card-body {
+    margin-top: 1rem;
+}
+
+.card-wrapper h3 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e3ebf6
+}
+
+.card-body ul {
+    list-style: none;
+    font-size: .8rem;
+}
+
+.card-body ul li span.card-label {
+    display: inline-block;
+    width: 40%;
+    font-weight: 600;
+}

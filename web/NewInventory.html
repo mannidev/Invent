@@ -2,53 +2,91 @@
 <html lang="en">
 
 <head>
-	<title>Add Inventory</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Inventory</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/Main.css">
+	<link rel="stylesheet" type="text/css" href="./css/forms.css">
+	<link rel="stylesheet" type="text/css" href="./css/components.css">
+    <script src="https://kit.fontawesome.com/d2591e384b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div class="header">
-		<div class="header-content">
-			<div class="header-logo">
-				<h1>Shopify </h1>
-			</div>
-		</div>
-	</div>
+    <!--Header -->
+    <div class="header">
+        <div class="header-logo">
+            <h1>Shopify</h1>
+        </div>
+        <div class="header-content">
+            <div class="header-search-bar">
+                <input type="text" name="header-search" placeholder="Search Inventory...">
+            </div>
+        </div>
+    </div>
 
-	<div class="side-nav">
-		<ul>
-			<li><a href="./AddInventory.html">New Inventory</a></li>
-			<li><a href="./SearchInventory.html">View Inventory</a></li>
-		</ul>
-	</div>
+    <div class="main-body">
+        <!--Sidebar-->
+        <nav>
+            <div class="sidenav">
+                <ul>
+                    <li>
+                        <a href="./InventoryDashboard.html">Dashboard</a>
+                    </li>
 
-	<div class="main-content">
-		<div class="product-form">
-			<h1>New Product</h1>
-			<hr />
-			<form action="./Product.html">
-				<label for="product_name">Name</label>
-				<input type="text" id="product_name" name="product_name" placeholder="Product Name...">
+                    <li>
+                        <a href="./NewInventory.html">New Inventory</a>
+                    </li>
 
-				<label for="product_qty">Quantity</label>
-				<input type="text" id="product_qty" name="product_qty" placeholder="Product Quantity...">
+                    <li>
+                        <a href="./ViewInventory.html">View Inventory</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-				<label for="product_category">Category</label>
-				<select id="product_category" name="product_category">
-					<option value="">select a category</option>
-				</select>
+        <!--Main Content-->
+        <div class="main-content">
+            <div class="main-content-header">
+                <h1>New Inventory</h1>
+            </div>
 
-				<input type="submit" value="Submit">
-			</form>
-		</div>
-	</div>
+            <div class="main-content-body">
 
-	<div class="footer">
-		<p>All rights reserved &copy;2019</p>
-	</div>
+				<div class="card-wrapper card-md">
+					<form action="newInventory.sh" method="POST">
+						<div class="form-group">
+							<label for="productNameId">Product Name</label>
+							<input type="text" class="form-control" id="productNameId" name="productName" placeholder="Enter product name">
+						</div>
+
+						<div class="form-group">
+							<label for="productQuantityId">Product Quantity</label>
+							<input type="number" class="form-control" id="productQuantityId" name="productQuantity" placeholder="Enter product Quantity">
+						</div>
+
+						<div class="form-group">
+							<label for="productCategoryId">Product Category</label>
+							<select name="productCategory" id="productCategoryId" class="form-control" required>
+								<option value="" disabled selected>Select category</option>	
+								<option value="Nivea">Nivea</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<input type="submit" />
+						</div>
+					</form>
+				</div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        All rights reserved &copy; 2019
+    </div>
 </body>
 
 </html>

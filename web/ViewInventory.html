@@ -2,59 +2,75 @@
 <html lang="en">
 
 <head>
-	<title>Add Inventory</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inventory</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/Main.css">
+	<link rel="stylesheet" type="text/css" href="./css/components.css">
+    <script src="https://kit.fontawesome.com/d2591e384b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div class="header">
-		<div class="header-content">
-			<div class="header-logo">
-				<h1>Shopify </h1>
-			</div> 
-			<div class="header-search-bar">
-				<form>
-					<input type="text" name="product-search" placeholder="Search..">
-				</form>
-			</div>
-		</div>
-	</div>
+    <!--Header -->
+    <div class="header">
+        <div class="header-logo">
+            <h1>Shopify</h1>
+        </div>
+        <div class="header-content">
+            <div class="header-search-bar">
+                <input type="text" name="header-search" placeholder="Search Inventory...">
+            </div>
+        </div>
+    </div>
 
-	<section>
-		<div class="side-nav">
-			<ul>
-				<li><a href="./AddInventory.html">New Inventory</a></li>
-				<li><a href="./SearchInventory.html">View Inventory</a></li>
-			</ul>
-		</div>
+    <div class="main-body">
+        <!--Sidebar-->
+        <nav>
+            <div class="sidenav">
+                <ul>
+                    <li>
+                        <a href="./InventoryDashboard.html">Dashboard</a>
+                    </li>
 
-		<div class="main-content">
-			<div class="search-products">
-				<h1>View Inventory</h1>
-				<hr />
-				<div class="product-cards">
-					<div class="product-card">
-						<img src="img/nivea.jpg" alt="Avatar" style="width: 100%">
-						<div class="card-container">
-							<ul>
-								<li>Name: <b>Nivea</b></li>
-								<li>Quantity: 3</li>
-								<li>Category: Body Lotion</li>
-							</ul>
-						</div>
+                    <li>
+                        <a href="./NewInventory.html">New Inventory</a>
+                    </li>
+
+                    <li>
+                        <a href="./ViewInventory.html">View Inventory</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Main Content-->
+        <div class="main-content">
+            <div class="main-content-header">
+                <h1>Inventory</h1>
+            </div>
+
+            <div class="main-content-body">
+
+				<div class="card-wrapper card-sm">
+					<h3>Nivea Body Lotion</h3>
+					<div class="card-body">
+						<ul>
+							<li><span class="card-label">Brand Name:</span> Nivea</li>
+							<li><span class="card-label">Quantity:</span> 10</li>
+							<li><span class="card-label">Category:</span> Body Lotion</li>
+						</ul>
 					</div>
-
 				</div>
-			</div>
-		</div>
-	</section>
 
-	<footer>
-		<p>All rights reserved &copy;2019</p>
-	</footer>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        All rights reserved &copy; 2019
+    </div>
 </body>
 
 </html>

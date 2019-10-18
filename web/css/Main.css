@@ -21,13 +21,12 @@ body {
 	border: none;
 }
 
-.header .header-logo {
-	padding: 10px;
+.header .header-logo { 
 	flex: 0 0 200px;
 	color: white;
 	text-align: center;
 }
-
+ 
 .header .header-content {
 	flex: 1;
 }
@@ -115,6 +114,7 @@ a {
 .main-body .main-content-header {
 	padding: 1rem 0;
 	border-bottom: 1px solid #e3ebf6;
+	margin-bottom: 2rem;
 }
 
 .main-body .main-content-header h1 {

@@ -29,6 +29,15 @@ for file in $PROJECT_PATH/web/js/*.js; do
     fi
 done
 
+rm -rf "$SERVER_PATH/webapps/$PROJECT_NAME/img"
+mkdir "$SERVER_PATH/webapps/$PROJECT_NAME/img"
+
+for file in $PROJECT_PATH/web/img/*; do
+    if [ -f "$PROJECT_PATH/web/img/$(basename "$file")" ]; then
+        cp $PROJECT_PATH/web/img/* "$SERVER_PATH/webapps/$PROJECT_NAME/img"
+    fi
+done
+
 cp $PROJECT_PATH/web/*.jsp "$SERVER_PATH/webapps/$PROJECT_NAME/"
 cp $PROJECT_PATH/web/*.html "$SERVER_PATH/webapps/$PROJECT_NAME/"
 
