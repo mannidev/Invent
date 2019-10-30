@@ -1,3 +1,7 @@
+<%@page import="com.inventory.util.InventoryConstants"%>
+<%@page import="com.inventory.model.InventoryItem"%>
+<%@page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +24,17 @@
         </div>
         <div class="header-content">
             <div class="header-search-bar">
-                <input type="text" name="header-search" placeholder="Search Inventory...">
+                <%
+                	InventoryItem item = (InventoryItem) request.getAttribute(InventoryConstants.INVENTORY_ITEM);
+                	if (item != null)
+                	{
+                		out.print("<input type=\"text\" name=\"header-search\" placeholder=\"Search Inventory...\" value=\" " + item.getName() + " \">");
+                	}
+                	else 
+                	{
+                		out.print("<input type=\"text\" name=\"header-search\" placeholder=\"Search Inventory...\">");	
+                	}
+                %>
             </div>
         </div>
     </div>
@@ -53,17 +67,25 @@
 
             <div class="main-content-body">
 
-				<div class="card-wrapper card-sm">
-					<h3>Nivea Body Lotion</h3>
-					<div class="card-body">
-						<ul>
-							<li><span class="card-label">Brand Name:</span> Nivea</li>
-							<li><span class="card-label">Quantity:</span> 10</li>
-							<li><span class="card-label">Category:</span> Body Lotion</li>
-						</ul>
-					</div>
-				</div>
-
+				<%
+					if (item != null) 
+					{
+						out.print("<div class=\"card-wrapper card-sm\">");
+						out.print("<h3>Nivea Body Lotion</h3>");
+						out.print("<div class=\"card-body\">");
+						out.print("<ul>");
+						out.print("<li><span class=\"card-label\">Brand Name:</span>" + item.getName() + "</li>");
+						out.print("<li><span class=\"card-label\">Quantity:</span>" + item.getQuantity() + "</li>");
+						out.print("<li><span class=\"card-label\">Category:</span>" + item.getCategory().getName() + "</li>");
+						out.print("</ul>");
+						out.print("</div>");
+						out.print("</div>");
+					}
+					else 
+					{
+						
+					}
+				%> 
             </div>
         </div>
     </div>

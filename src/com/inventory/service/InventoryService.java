@@ -2,6 +2,8 @@ package com.inventory.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.ServletContext;
 
@@ -24,8 +26,9 @@ public class InventoryService {
 		this.catagoryDataProvider = new CategoryDataImplementation(connection);
 	}
 	
-	public boolean CreateNewInventoryItem(InventoryItem inventoryItem) 
-	{ 
+	public UUID createNewInventoryItem(InventoryItem inventoryItem) 
+	{
+		UUID itemId = null;
 		try 
 		{
 			String categoryName = inventoryItem.getCategory().getName(); 
@@ -37,13 +40,32 @@ public class InventoryService {
 			}
 			
 			inventoryItem.setCategory(category); 
-			return inventoryDataProvider.insertInventoryItem(inventoryItem); 
+			itemId = inventoryDataProvider.insertInventoryItem(inventoryItem); 
 		} catch (SQLException e) { 
 			e.printStackTrace();
 		}
-		return false;
+		return itemId;
 	}
-	 
 	
-	 
+	public List<InventoryItem> getInventory()
+	{
+		List<InventoryItem> inventory = null;
+		try {
+			inventory = inventoryDataProvider.getInventory();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return inventory;
+	}
+	  
+	public InventoryItem getInventoryById(UUID id) 
+	{
+		InventoryItem item = null;
+		try {
+			item = inventoryDataProvider.getInventoryItemById(id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return item;
+	}
 }

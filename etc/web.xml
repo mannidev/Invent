@@ -12,12 +12,7 @@
 
 	<servlet>
 		<servlet-name>New Inventory</servlet-name>
-		<servlet-class>com.inventory.web.NewInventory</servlet-class>
-		
-		<init-param>
-			<param-name>defaultSearchParam</param-name>
-			<param-value>fruits</param-value>
-		</init-param>
+		<servlet-class>com.inventory.web.Inventory</servlet-class>
 	</servlet>         
 	
 	<servlet-mapping>
