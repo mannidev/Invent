@@ -1,6 +1,7 @@
 package com.inventory.web;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +17,22 @@ import com.inventory.util.InventoryConstants;
 public class Inventory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	 
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException 
+	{ 
+		InventoryService inventoryService = new InventoryService(getServletContext());
+		List<InventoryItem> inventory = inventoryService.getInventory();
+		
+		if (inventory != null)
+		{
+			request.setAttribute(InventoryConstants.INVENTORY, inventory);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ViewInventory.jsp");
+			dispatcher.forward(request, response);
+		}
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
@@ -24,7 +41,7 @@ public class Inventory extends HttpServlet {
 		int quantity = Integer.parseInt(request.getParameter(InventoryConstants.PRODUCT_QUANTITY));
 		String categoryName = request.getParameter(InventoryConstants.PRODUCT_CATEGORY); 
 		InventoryItem inventoryItem = new InventoryItem(name, quantity, categoryName); 
-
+ 
 		InventoryService inventoryService = new InventoryService(getServletContext());
 		UUID result = inventoryService.createNewInventoryItem(inventoryItem);
 		

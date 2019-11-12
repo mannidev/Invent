@@ -53,7 +53,7 @@
                     </li>
 
                     <li>
-                        <a href="./ViewInventory.html">View Inventory</a>
+                        <a href="./newInventory.sh">View Inventory</a>
                     </li>
                 </ul>
             </div>
@@ -67,25 +67,41 @@
 
             <div class="main-content-body">
 
-				<%
+				<div class="cards">
+					<%
 					if (item != null) 
 					{
-						out.print("<div class=\"card-wrapper card-sm\">");
-						out.print("<h3>Nivea Body Lotion</h3>");
-						out.print("<div class=\"card-body\">");
-						out.print("<ul>");
-						out.print("<li><span class=\"card-label\">Brand Name:</span>" + item.getName() + "</li>");
-						out.print("<li><span class=\"card-label\">Quantity:</span>" + item.getQuantity() + "</li>");
-						out.print("<li><span class=\"card-label\">Category:</span>" + item.getCategory().getName() + "</li>");
-						out.print("</ul>");
-						out.print("</div>");
-						out.print("</div>");
+						out.println("<div class=\"card-wrapper card-sm\">");
+						out.println("<h3>" + item.getName() + "</h3>");
+						out.println("<div class=\"card-body\">");
+						out.println("<ul>");
+						out.println("<li><span class=\"card-label\">Brand Name:</span>" + item.getName() + "</li>");
+						out.println("<li><span class=\"card-label\">Quantity:</span>" + item.getQuantity() + "</li>");
+						out.println("<li><span class=\"card-label\">Category:</span>" + item.getCategory().getName() + "</li>");
+						out.println("</ul>");
+						out.println("</div>");
+						out.println("</div>");
 					}
 					else 
 					{
-						
+						List<InventoryItem> inventory = (List<InventoryItem>) request.getAttribute(InventoryConstants.INVENTORY); 
+						for (InventoryItem inventoryItem : inventory)
+						{
+							out.println("<div class=\"card-wrapper card-sm\">");
+							out.println("<h3>" + inventoryItem.getName() + "</h3>");
+							out.println("<div class=\"card-body\">");
+							out.println("<ul>");
+							out.println("<li><span class=\"card-label\">Brand Name:</span>" + inventoryItem.getName() + "</li>");
+							out.println("<li><span class=\"card-label\">Quantity:</span>" + inventoryItem.getQuantity() + "</li>");
+							out.println("<li><span class=\"card-label\">Category:</span>" + inventoryItem.getCategory().getName() + "</li>");
+							out.println("</ul>");
+							out.println("</div>");
+							out.println("</div>");
+						}
 					}
 				%> 
+				</div>
+				
             </div>
         </div>
     </div>

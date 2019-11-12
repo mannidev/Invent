@@ -71,8 +71,14 @@ public class InventoryDataImplementation {
 	}
 	
 	public List<InventoryItem> getInventory() throws SQLException {
-		PreparedStatement preparedStatement = this.connection.prepareStatement(SELECT_INVENTORY); 
+		int limit = 8;
+		int currentPage = 1;
+		int offset = (currentPage - 1) * limit;
+		PreparedStatement preparedStatement = this.connection.prepareStatement(SELECT_INVENTORY);
+		preparedStatement.setInt(1, limit);
+		preparedStatement.setInt(2, offset); 
 		ResultSet result = preparedStatement.executeQuery(); 
+		preparedStatement.clearParameters();
 		
 		List<InventoryItem> items = new ArrayList<InventoryItem>();
 		while(result.next()) {
@@ -82,6 +88,7 @@ public class InventoryDataImplementation {
 			item.setQuantity(result.getInt(InventoryProductTable.QUANTITY));
 			Category category = categoryData.getCategoryById((UUID)result.getObject(InventoryProductTable.CATEGORY_ID));
 			item.setCategory(category); 
+			items.add(item);
 		}
 		return items;
 	}

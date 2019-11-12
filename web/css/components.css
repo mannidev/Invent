@@ -2,6 +2,17 @@
 	box-sizing: border-box;
 }
 
+.cards {
+	display: flex;
+	flex: 0 0 100%;
+	flex-flow: row wrap; 
+	margin-bottom: 50px; 
+}
+
+.card-gaps {
+	margin-right: 20px;
+}
+
 .card-md {
 	width: 70%;
 }

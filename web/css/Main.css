@@ -114,6 +114,7 @@ a {
 	background-color: #f9fbfd;
 	padding: 1rem 2rem;
 	flex: 1;
+	overflow-y: scroll;
 }
 
 .main-body .main-content-header {
@@ -130,9 +131,16 @@ a {
 	color: #12263f;
 }
 
+.main-body .main-content-body {
+	display: flex; 
+	flex-direction: column;
+	flex:  0 0 100%; 
+}
+
 /* footer */
 .footer {
 	background-color: black;
 	text-align: center;
 	padding: 10px;
+	flex: 0 0 auto;
 }
