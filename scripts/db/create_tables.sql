@@ -5,6 +5,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE inv_products (
 	"id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
 	"name" varchar(50) NOT NULL,
+	"quantity" int,
 	category_id uuid,
 	created_on TIMESTAMP WITHOUT TIME ZONE default now()
 );
